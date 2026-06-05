@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BITE LOG Dashboard</title>
+  <link rel="stylesheet" href="/css/dashboard.css" />
+</head>
+<body>
+
+  <div class="dashboard">
+
+    <aside class="sidebar">
+      <h2>Bite-Log</h2>
+
+      <nav>
+        <a href="/dashboard" class="active">Dashboard</a>
+        <a href="/meals">Meals</a>
+        <a href="/symptoms">Symptoms</a>
+        <a href="/logout">Logout</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+
+      <header class="topbar">
+        <div>
+          <h1>Dashboard</h1>
+          <p>Log your Meals and analyse your progress.</p>
+        </div>
+      </header>
+
+      <section class="cards">
+        <div class="card">
+          <h3>Qoute of the Day</h3>
+                </div>
+        
+      </section>
+
+      <section class="content-grid">
+
+        <div class="panel">
+          <h2>Add Meal</h2>
+
+          <form action="/add-meal" method="POST">
+<label for="type">Choose meal type:</label>
+<select name="type" id="options-dropdown">
+  <option value="Breakfast">Breakfast</option>
+  <option value="Lunch">  Lunch</option>
+  <option value="Dinner">  Dinner</option>
+</select> <br><br>
+            
+<label for="rate">Choose rating :</label>
+
+<select name="rate" id="options-dropdown">
+  <option value="safe">safe</option>
+  <option value="okay">  okay</option>
+  <option value="trigger">  trigger</option>
+</select> <br><br>
+            <label for="date">Date</label>
+            <input type="date" name="date" placeholder="date"> <br> <br>
+            <label for="notes">add a note</label>
+            <input type="text" name="notes" placeholder="add notes"> <br><br>
+            <button type="submit">Add MEAL</button>
+          </form>
+        </div>
+
+</div> 
+
+<table>
+  <!-- This is the first row containing the headers -->
+  <tr>
+    <th>meal-type</th>
+    <th>meal-date</th>
+    <th>rating</th>
+    <th>notes</th> 
+    <th>Symptoms</th> 
+</tr>  <tr>
+     <% if (locals.meals) { %>
+      <% meals.forEach((m)=>{ %>
+    <td><%=  m.meal_type%></td>
+    <td><%= m.meal_date%></td>
+    <td><%= m.rating%></td>
+    <td><%= m.notes%></td>
+    <td> <a href="/meals/<%= m.id %>">See more</a>
+    </td>
+  </tr>
+<% }) %>
+    <% } else { %>
+      <p>No meals added yet.</p>
+    <% } %>
+    </table>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

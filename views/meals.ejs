@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/css/meals.css">
+  </head>
+<table>
+  <tr>
+    <th>meal-type</th>
+    <th>meal-date</th>
+    <th>rating</th>
+    <th>notes</th> 
+    <th>Symptoms</th> 
+</tr>  <tr>
+     <% if (locals.meals) { %>
+      <% meals.forEach((m)=>{ %>
+    <td><%=  m.meal_type%></td>
+    <td><%= m.meal_date%></td>
+    <td><%= m.rating%></td>
+    <td><%= m.notes%></td>
+    <td> <a href="/meals/<%= m.id %>">See more</a>
+    </td>
+  </tr>
+</table>
+<% }) %>
+    <% } else { %>
+      <p>No meals added yet.</p>
+    <% } %>
+    </html>

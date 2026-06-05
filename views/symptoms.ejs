@@ -1,0 +1,40 @@
+     <html>
+      <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StudyFlow Dashboard</title>
+  <link rel="stylesheet" href="/css/symptoms.css" />
+</head>
+     <div class="panel">
+  <div class="subject-list">
+        <div class="subject-item">
+          <span><%= name %></span>
+        </div>
+  </div>
+
+    <!-- Add Task Form -->
+  <form action="/meals/<%=meal_id%>/symptoms" method="POST"> 
+    <label for="add">Add symptoms</label>
+    <input type="text" name="add" placeholder="Enter" required />
+    <button type="submit">Add </button>
+  </form>
+
+  <hr>
+
+<ul>
+
+  <% if(locals.symptoms){ %>
+  <% symptoms.forEach(S => { %>
+      <li>
+<p >
+  <%= S.symptoms %>
+</p>
+
+    </li>
+  <% }) %>
+</ul>
+<% } else { %> 
+    <h1></h1>
+<% } %>
+</div>
+</html>

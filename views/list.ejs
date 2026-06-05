@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/list.css">    </head>
+  <div class="meal-list">
+        <div class="meal-item">
+            <p>SYMPTOMS  AND MEALS </p>
+     </div>
+
+<ul>
+  <% if(locals.list){ %>
+  <% list.forEach(S => { %>
+      <li>
+        <p><%=S.notes%></p>
+<p >
+  <%= S.symptoms %>
+</p>
+
+    </li>
+  <% }) %>
+</ul>
+<% } else { %> 
+    <h1></h1>
+<% } %>
+  </div>
+</html>

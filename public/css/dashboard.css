@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: #f8d7df;
+  color: #4b2f3f;
+}
+
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 240px;
+  background: #d84b8f;
+  padding: 25px;
+  color: white;
+}
+
+.sidebar h2 {
+  margin-bottom: 30px;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.sidebar a:hover,
+.sidebar .active {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.main-content {
+  flex: 1;
+  padding: 30px;
+}
+
+.topbar {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  margin-bottom: 25px;
+}
+
+.topbar h1 {
+  color: #d84b8f;
+}
+
+.cards {
+  margin-bottom: 25px;
+}
+
+.card {
+  background: #fff7fa;
+  padding: 22px;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(216, 75, 143, 0.15);
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+}
+
+.panel {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(216, 75, 143, 0.15);
+}
+
+.panel h2 {
+  margin-bottom: 20px;
+  color: #d84b8f;
+}
+
+form label {
+  font-weight: bold;
+  color: #7a486f;
+}
+
+select,
+input {
+  width: 100%;
+  padding: 11px;
+  margin-top: 6px;
+  border: 1px solid #e8a9c5;
+  border-radius: 10px;
+  outline: none;
+}
+
+select:focus,
+input:focus {
+  border-color: #d84b8f;
+}
+
+button {
+  background: #d84b8f;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #c43d7d;
+}
+
+table {
+  width: 100%;
+  margin-top: 25px;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(216, 75, 143, 0.15);
+}
+
+th {
+  background: #d84b8f;
+  color: white;
+  padding: 14px;
+  text-align: left;
+}
+
+td {
+  padding: 14px;
+  border-bottom: 1px solid #f2c2d4;
+}
+
+td a {
+  color: #d84b8f;
+  font-weight: bold;
+}
+
+tr:hover {
+  background: #fff1f6;
+}
