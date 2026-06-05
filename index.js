@@ -19,19 +19,19 @@ app.use(bodyParser.urlencoded({ extended: true }));
 env.config();
 
 const db = new pg.Client({
-  user: "postgres",   
-  host: "localhost",  
-  database: "bitelog",  
-  password: "arpita2005", 
-  port: 5432          
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  database: process.env.DB_NAME,
+  password: process.env.DB_PASSWORD,
+  port: process.env.DB_PORT
 });
 db.connect();
 
 const saltround = 10;
 app.use(session({
-  secret: "iiiii", // Used to sign the session ID cookie
-  resave: false,             // Prevents saving session if nothing changed
-  saveUninitialized: true,  // Forces a new, empty session to be saved
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: true,
 }));
 
 app.use(passport.initialize());
